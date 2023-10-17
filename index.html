@@ -1,17 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OMDb</title>
-    <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="card">
+        <h1>Consulta de filmes</h1>
         <div class="search">
             <input type="text" placeholder="Escreva o nome do filme" spellcheck="false">
-            <buttom><img src="/images/search.png"></buttom>
+            <button><img src="/images/search.png"></button>
         </div>
+        <div class="poster">
+            <img src="" alt="Movie Poster">
+        </div>
+        <div class="movie-details">
+            <h2>Informações </h2>
+        <div id="movie-title"></div>
+        <div id="movie-actors"></div>
+        </div>
+
+        <script>
+            const apiUrl = "https://www.omdbapi.com/?t=";
+            const apiKey = "ab720430";
+            const searchBox = document.querySelector(".search input");
+            const searchBtn = document.querySelector(".search button");
+            const posterImg = document.querySelector(".poster img");
+            const movieTitle = document.getElementById("movie-title");
+            const movieActors = document.getElementById("movie-actors");
+
+            async function checkMovie(movie) {
+                const response = await fetch(apiUrl + movie + `&apikey=${apiKey}`);
+                const data = await response.json();
+
+                // Verifica se a requisição foi bem-sucedida
+                if (data.Response === "True") {
+                    // Atualiza a imagem do pôster
+                    posterImg.src = data.Poster;
+                    posterImg.alt = `${data.Title} Poster`;
+                } else {
+                    // Limpa a imagem do pôster se não houver dados válidos
+                    posterImg.src = "";
+                    posterImg.alt = "";
+                    console.error("Filme não encontrado");
+                }
+                console.log(data);
+            };
+            searchBtn.addEventListener("click", () => {
+                checkMovie(searchBox.value);
+            });
+
+        </script>
+    </div>
 </body>
+
 </html>
