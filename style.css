@@ -6,12 +6,14 @@
 }
 
 body{
-    background: #515152;
+    background-image: url(images/background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .card{
     width: 90%;
-    background: linear-gradient(-105deg, #9880d1, #d79bf3);
+    background: linear-gradient(-105deg, #e43e3e, #8d030a);
     color: #fff;
     margin: 100px auto 0;
     border-radius: 20px;
@@ -22,7 +24,7 @@ body{
 .card h1{
     margin-bottom: 15px;
     font-size: 50px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .search{
@@ -67,18 +69,18 @@ body{
 
 .poster img{
     border-radius: 10px;
-    display: flex;
     align-items: center;
     text-align: right;
+    display: flex;
 }
 
 .movie-details {
     margin-top: 20px;
+    display: flex;
   }
 
   h2 {
     color: #f1f1f1;
-    display: flex;
     align-items: center;
     text-align: left;
   }
