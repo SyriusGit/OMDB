@@ -1,120 +1,134 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: "Poppins", sans-serif;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
 }
 
-body{
-    background-image: url(images/background.png);
-    background-size: cover;
-    background-repeat: no-repeat;
+body {
+  background-image: url(images/background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.card{
-    width: 90%;
-    background: linear-gradient(-105deg, #e43e3e, #8d030a);
-    color: #fff;
-    margin: 100px auto 0;
-    border-radius: 20px;
-    padding: 40px 35px;
-    text-align: center;
+.card {
+  width: 90%;
+  background: linear-gradient(-105deg, #e43e3e, #8d030a);
+  color: #fff;
+  margin: 100px auto 0;
+  border-radius: 20px;
+  padding: 40px 35px;
+  text-align: center;
+  transition: transform .2s;
+  /* Animation */
 }
 
-.card h1{
-    margin-bottom: 15px;
-    font-size: 50px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+.card:hover {
+  transform: scale(1.01);
+  /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 
-.search{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.card h1 {
+  margin-bottom: 15px;
+  font-size: 50px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.search input{
-    border: 0;
-    outline: 0;
-    background: #ebfffc;
-    color: #555;
-    padding: 10px 25px;
-    height: 60px;
-    border-radius: 30px;
-    flex: 1;
-    margin-right: 16px;
-    font-size: 18px;
+.search {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.search button{
-    border: 0;
-    outline: 0;
-    background: #ebebeb;
-    border-radius: 50px;
-    width: 60px;
-    height: 60px;
-    cursor: pointer;
-    transition: transform 0.5s;
+.search input {
+  border: 0;
+  outline: 0;
+  background: #ebfffc;
+  color: #555;
+  padding: 10px 25px;
+  height: 60px;
+  border-radius: 30px;
+  flex: 1;
+  margin-right: 16px;
+  font-size: 18px;
 }
 
-.search button:hover{
-    transform: scale(1.05);
+.search button {
+  border: 0;
+  outline: 0;
+  background: #ebebeb;
+  border-radius: 50px;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
 }
 
-.search button img{
-    width: 16px;
-    margin-top: 8px;
+.search button:hover {
+  background-color: #ff9a9a;
 }
 
-.poster img{
-    border-radius: 10px;
-    align-items: center;
-    text-align: right;
-    display: flex;
+.search button img {
+  width: 16px;
+  margin-top: 8px;
+}
+
+.poster img {
+  order: 2;
+  border-radius: 10px;
+  align-items: right;
+  text-align: right;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: none;
+  max-height: none;
 }
 
 .movie-details {
-    margin-top: 20px;
-    display: flex;
-  }
+  order: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: space-between;
+  text-align: left;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
 
-  h2 {
-    color: #f1f1f1;
-    align-items: center;
-    text-align: left;
-  }
+h2 {
+  color: #f1f1f1;
+  align-items: center;
+  text-align: left;
+}
 
-  #movie-title {
-    font-size: 20px;
-    font-weight: bold;
-  }
+#movie-title {
+  font-size: 20px;
+  font-weight: bold;
+}
 
-  #movie-actors {
-    margin-top: 10px;
-  }
+#movie-actors {
+  margin-top: 10px;
+}
 
-  #movie-year {
-    margin-top: 10px;
-  }
+#movie-year {
+  margin-top: 10px;
+}
 
-  #more-details-button {
-    background-color: #007bff;
-    border: none;
-    border-radius: 4px;
-    color: #fff;
-    cursor: pointer;
-    padding: 10px 20px;
-    margin-top: 20px;
-    display: none;
-  }
+#more-details-button {
+  background-color: #fd4040;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 20px;
+  margin-top: 20px;
+}
 
-  #more-details-button:hover {
-    background-color: #0056b3;
-  }
+#more-details-button:hover {
+  background-color: #fd4040;
+}
 
-  #movie-plot {
-    display: none;
-    margin-top: 20px;
-    color: #555;
-  }
+#movie-plot {
+  display: none;
+}

@@ -19,10 +19,10 @@
             <img src="" alt="Movie Poster">
         </div>
         <div class="movie-details">
-            <h2>Informações </h2>
-        <div id="movie-title"></div>
-        <div id="movie-actors"></div>
-        <div id="movie-year"></div>
+            <h2>Informações: </h2>
+            <div id="movie-title"></div>
+            <div id="movie-actors"></div>
+            <div id="movie-year"></div>
         </div>
 
         <script>
@@ -31,14 +31,14 @@
             const searchBox = document.querySelector(".search input");
             const searchBtn = document.querySelector(".search button");
             const posterImg = document.querySelector(".poster img");
-            const movieTitle = document.getElementById("movie-title");
-            const movieActors = document.getElementById("movie-actors");
+
 
             async function checkMovie(movie) {
                 const response = await fetch(apiUrl + movie + `&apikey=${apiKey}`);
                 const data = await response.json();
 
-                // Verifica se a requisição foi bem-sucedida
+                console.log(data);
+
                 if (data.Response === "True") {
                     // Atualiza a imagem do pôster
                     posterImg.src = data.Poster;
@@ -49,12 +49,31 @@
                     posterImg.alt = "";
                     console.error("Filme não encontrado");
                 }
-                console.log(data);
+
+                document.getElementById("movie-title").innerHTML = data.Title;
+                document.getElementById("movie-actors").innerHTML = data.Actors;
+                document.getElementById("movie-year").innerHTML = data.Year;
+
             };
+            // ... seu código anterior ...
+
+            searchBox.addEventListener('keyup', function (event) {
+                // Número 13 é a tecla 'Enter'
+                if (event.keyCode === 13) {
+                    // Cancela a ação padrão, se necessário
+                    event.preventDefault();
+                    // Chama a função que você quer ativar
+                    checkMovie(searchBox.value);
+                }
+            });
+
             searchBtn.addEventListener("click", () => {
                 checkMovie(searchBox.value);
             });
 
+            searchBtn.addEventListener("click", () => {
+                checkMovie(searchBox.value);
+            });
         </script>
     </div>
 </body>
