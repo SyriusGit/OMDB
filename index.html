@@ -13,18 +13,18 @@
         <h1>Consulta de filmes</h1>
         <div class="search">
             <input type="text" placeholder="Escreva o nome do filme" spellcheck="false">
-            <button><img src="/images/search.png"></button>
+            <button><img src="./images/search.png"></button>
         </div>
-        <div class="poster">
-            <img src="" alt="Movie Poster">
+            <div class="poster">
+                <img src="" alt="">
+            </div>
+            <div class="movie-details">
+                <h2>Informações: </h2>
+                <div id="movie-title"></div>
+                <div id="movie-actors"></div>
+                <div id="movie-year"></div>
+            </div>
         </div>
-        <div class="movie-details">
-            <h2>Informações: </h2>
-            <div id="movie-title"></div>
-            <div id="movie-actors"></div>
-            <div id="movie-year"></div>
-        </div>
-
         <script>
             const apiUrl = "https://www.omdbapi.com/?t=";
             const apiKey = "ab720430";

@@ -12,7 +12,8 @@ body {
 }
 
 .card {
-  width: 90%;
+  width: 50%;
+  height: 700px; /* Adicione uma altura fixa aqui */
   background: linear-gradient(-105deg, #e43e3e, #8d030a);
   color: #fff;
   margin: 100px auto 0;
@@ -20,7 +21,6 @@ body {
   padding: 40px 35px;
   text-align: center;
   transition: transform .2s;
-  /* Animation */
 }
 
 .card:hover {
@@ -62,38 +62,36 @@ body {
   width: 60px;
   height: 60px;
   cursor: pointer;
+  transition: transform .1s;
 }
 
 .search button:hover {
   background-color: #ff9a9a;
+  transform: scale(1.01)
 }
 
 .search button img {
   width: 16px;
-  margin-top: 8px;
+  margin-top: 7px;
 }
 
 .poster img {
-  order: 2;
-  border-radius: 10px;
+  float: right;
+  border-radius: 20px;
+  display: flex;
   align-items: right;
-  text-align: right;
-  display: block;
-  margin-right: auto;
   margin-left: auto;
-  max-width: none;
-  max-height: none;
+  margin-top: 30px;
 }
 
 .movie-details {
-  order: 1;
+  float: left;
   display: flex;
   flex-direction: column;
-  align-items: left;
-  justify-content: space-between;
   text-align: left;
-  margin-top: 20px;
-  margin-bottom: 5px;
+  margin-top: 50px;
+  margin-bottom: auto;
+  margin-left: 5px;
 }
 
 h2 {
